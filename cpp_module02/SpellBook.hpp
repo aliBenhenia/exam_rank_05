@@ -20,7 +20,7 @@ class SpellBook
     public:
         SpellBook();
         void learnSpell(ASpell* obj);
-        void forgetSpell(std::string string const &obj);
+        void forgetSpell(std::string const &name);
         ASpell* createSpell(std::string const & name);
         ~SpellBook();
 };

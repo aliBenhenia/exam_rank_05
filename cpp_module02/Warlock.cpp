@@ -49,10 +49,8 @@ void Warlock::forgetSpell(std::string name_)
 
 void Warlock::launchSpell(std::string name_,const ATarget &obj)
 {
-        // if (data.find(name_) != data.end())
-        //     data[name_]->launch(obj);
-        if (this->spell_book.createSpell(name))
-            this->spell_book.createSpell(name)->launch(obj);
+    if (this->spell_book.createSpell(name_))
+        this->spell_book.createSpell(name_)->launch(obj);
 }
 
 Warlock :: ~Warlock()
