@@ -5,9 +5,11 @@
 #include <map>
 #include "ASpell.hpp"
 #include "ATarget.hpp"
+#include "SpellBook.hpp"
 
 class ATarget;
 class ASpell;
+class SpellBook;
 
 class Warlock
 {
@@ -18,6 +20,7 @@ class Warlock
         Warlock();
         Warlock(Warlock const &obj);
         Warlock &operator=(Warlock const &obj);
+        SpellBook spell_book;
     public:
         void learnSpell(ASpell *obj);
         void forgetSpell(std::string name_);

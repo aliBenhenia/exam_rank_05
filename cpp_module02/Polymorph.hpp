@@ -10,7 +10,6 @@ class Polymorph:public ASpell
         Polymorph();
         ASpell *clone()const;
         ~Polymorph();
-
 };
 
 #endif

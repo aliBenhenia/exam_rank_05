@@ -40,24 +40,19 @@ std::string const &Warlock::getTitle()const
 void Warlock::learnSpell(ASpell *obj)
 {
     if (obj)
-    {
-        if (data.find(obj->getName()) == data.end())
-            data[obj->getName()] = obj->clone();
-    }
+        this->spell_book.learnSpell(obj);
 }
 void Warlock::forgetSpell(std::string name_)
 {
-        if (data.find(name_) != data.end())
-        {
-            delete data.find(name_)->second; 
-            data.erase(data.find(name_));
-        }
+    this->spell_book.forgetSpell(name);
 }
 
 void Warlock::launchSpell(std::string name_,const ATarget &obj)
 {
-        if (data.find(name_) != data.end())
-            data[name_]->launch(obj);
+        // if (data.find(name_) != data.end())
+        //     data[name_]->launch(obj);
+        if (this->spell_book.createSpell(name))
+            this->spell_book.createSpell(name)->launch(obj);
 }
 
 Warlock :: ~Warlock()
